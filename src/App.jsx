@@ -2,12 +2,10 @@
 import { Routes, Route } from "react-router-dom"
 // Pages  (components)
 import { ErrorNotFoundPage, HomePage, CharacterDetailPage } from "./pages"
-import { Header } from "./features/ui"
 
 function App() {
   return (
     <div className="w-full">
-      <Header />
       <main className="w-full">
         <Routes>
           <Route path="*" element={<ErrorNotFoundPage />} />
