@@ -26,6 +26,9 @@ const charactersListSlice = createSlice({
     setPage(state, action) {
       state.currentPage = action.payload
     },
+    setCharacters(state, action) {
+      state.characters = action.payload
+    },
   },
   extraReducers: (builder) => {
     builder.addCase(getAllCharacters.pending, (state) => {
@@ -42,6 +45,6 @@ const charactersListSlice = createSlice({
   },
 })
 
-export const { setPage } = charactersListSlice.actions
+export const { setPage, setCharacters } = charactersListSlice.actions
 
 export default charactersListSlice.reducer

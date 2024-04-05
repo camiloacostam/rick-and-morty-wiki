@@ -1,6 +1,11 @@
 import { useEffect } from "react"
 import { useDispatch, useSelector } from "react-redux"
-import { getAllCharacters, setPage } from "./characters-list-slice"
+import {
+  getAllCharacters,
+  setPage,
+  setCharacters,
+} from "./characters-list-slice"
+import { sortByNameAsc, sortByNameDesc } from "../../utils/sorter"
 
 export function useCharacters() {
   const characters = useSelector((state) => state.charactersList.characters)
@@ -10,7 +15,7 @@ export function useCharacters() {
   const dispatch = useDispatch()
 
   useEffect(() => {
-    dispatch(getAllCharacters(currentPage))
+    dispatch(getAllCharacters(currentPage)).then((res) => {})
   }, [currentPage])
 
   const setCurrentPage = (NewPage) => {
@@ -19,5 +24,23 @@ export function useCharacters() {
     })
   }
 
-  return { characters, currentPage, totalPages, setCurrentPage, loading }
+  const sortCharactersAsc = ({ characters }) => {
+    const sortedCharacters = sortByNameAsc(characters)
+    return dispatch(setCharacters(sortedCharacters))
+  }
+
+  const sortCharactersDesc = ({ characters }) => {
+    const sortedCharacters = sortByNameDesc(characters)
+    return dispatch(setCharacters(sortedCharacters))
+  }
+
+  return {
+    characters,
+    currentPage,
+    totalPages,
+    setCurrentPage,
+    loading,
+    sortCharactersAsc,
+    sortCharactersDesc,
+  }
 }
