@@ -5,7 +5,7 @@ const initialState = {
   currentPage: 1,
   totalPages: 1,
   characters: [],
-  loading: "idle",
+  loading: false,
 }
 
 export const getAllCharacters = createAsyncThunk(
@@ -29,15 +29,15 @@ const charactersListSlice = createSlice({
   },
   extraReducers: (builder) => {
     builder.addCase(getAllCharacters.pending, (state) => {
-      state.loading = "pending"
+      state.loading = true
     })
     builder.addCase(getAllCharacters.fulfilled, (state, action) => {
-      state.loading = "succeeded"
+      state.loading = false
       state.characters = action.payload.results
       state.totalPages = action.payload.info.pages
     })
     builder.addCase(getAllCharacters.rejected, (state) => {
-      state.loading = "failed"
+      state.loading = true
     })
   },
 })

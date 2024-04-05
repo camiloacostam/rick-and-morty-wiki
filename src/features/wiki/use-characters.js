@@ -6,6 +6,7 @@ export function useCharacters() {
   const characters = useSelector((state) => state.charactersList.characters)
   const currentPage = useSelector((state) => state.charactersList.currentPage)
   const totalPages = useSelector((state) => state.charactersList.totalPages)
+  const loading = useSelector((state) => state.charactersList.loading)
   const dispatch = useDispatch()
 
   useEffect(() => {
@@ -18,5 +19,5 @@ export function useCharacters() {
     })
   }
 
-  return { characters, currentPage, totalPages, setCurrentPage }
+  return { characters, currentPage, totalPages, setCurrentPage, loading }
 }

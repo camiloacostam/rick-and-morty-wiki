@@ -3,7 +3,7 @@ import axios from "axios"
 
 const initialState = {
   character: {},
-  loading: "idle",
+  loading: false,
 }
 
 export const getCharacterInfo = createAsyncThunk(
@@ -23,14 +23,14 @@ const characterDetail = createSlice({
   reducers: {},
   extraReducers: (builder) => {
     builder.addCase(getCharacterInfo.pending, (state) => {
-      state.loading = "pending"
+      state.loading = true
     })
     builder.addCase(getCharacterInfo.fulfilled, (state, action) => {
-      state.loading = "succeeded"
+      state.loading = false
       state.character = action.payload
     })
     builder.addCase(getCharacterInfo.rejected, (state) => {
-      state.loading = "failed"
+      state.loading = true
     })
   },
 })

@@ -6,6 +6,8 @@ import { useEffect } from "react"
 
 export function useCharacterDetail() {
   const character = useSelector((state) => state.characterDetail.character)
+  const loading = useSelector((state) => state.characterDetail.loading)
+
   const dispatch = useDispatch()
   const { characterId } = useParams()
 
@@ -13,5 +15,5 @@ export function useCharacterDetail() {
     dispatch(getCharacterInfo(characterId))
   }, [dispatch, characterId])
 
-  return { character }
+  return { character, loading }
 }
