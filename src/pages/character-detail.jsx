@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom"
 import { Loading } from "../features/ui"
-import { Character, useCharacterDetail } from "../features/wiki"
+import { Character, useCharacterDetail } from "../features/characters"
 
 export default function CharacterDetailPage() {
   const { character, loading } = useCharacterDetail()

@@ -1,5 +1,5 @@
 //Wiki Features
-import { useCharacters, CharactersList } from "../features/wiki"
+import { useCharacters, CharactersList } from "../features/characters"
 //Ui Components
 import { Pagination, Loading } from "../features/ui"
 
