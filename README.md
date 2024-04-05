@@ -37,6 +37,12 @@ To lint the code:
 pnpm run lint
 ```
 
+To run the tests:
+
+```bash
+pnpm run test
+```
+
 ## Contributing
 
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
