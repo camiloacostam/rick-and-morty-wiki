@@ -1,8 +1,44 @@
-# React + Vite
+# Rick and Morty Wiki
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a web application that serves as a wiki for the Rick and Morty show. It's built with React, Redux, and Vite.
 
-Currently, two official plugins are available:
+## Installation
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+First, clone the repository:
+
+```bash
+git clone https://github.com/camiloacostam/rick-and-morty-wiki.git
+```
+
+Then, navigate into the project directory and install the dependencies:
+
+```bash
+cd rickandmorty-wiki
+pnpm install
+```
+
+## Usage
+
+To start the development server:
+
+```bash
+pnpm run dev
+```
+
+To build the application for production:
+
+```bash
+pnpm run build
+```
+
+To lint the code:
+
+```bash
+pnpm run lint
+```
+
+## Contributing
+
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+
+## License
