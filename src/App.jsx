@@ -1,7 +1,7 @@
 // React Router
 import { Routes, Route } from "react-router-dom"
 // Pages  (components)
-import { ErrorNotFoundPage, HomePage } from "./pages"
+import { ErrorNotFoundPage, HomePage, CharacterDetailPage } from "./pages"
 import { Header } from "./features/ui"
 
 function App() {
@@ -12,6 +12,7 @@ function App() {
         <Routes>
           <Route path="*" element={<ErrorNotFoundPage />} />
           <Route path="/" element={<HomePage />} />
+          <Route path="/:characterId" element={<CharacterDetailPage />} />
         </Routes>
       </main>
     </div>
